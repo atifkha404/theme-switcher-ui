@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Theme Switcher</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="main">
+    <div class="app-card">
+      <header>
+        <h1>Theme Switcher</h1>
+        <p>Toggle between Light and Dark mode</p>
+      </header>
+
+      <div class="toggle-section">
+        <input type="checkbox" id="theme-toggle" />
+        <label for="theme-toggle" class="toggle-switch" tabindex="0">
+          <span class="icon sun">☀️</span>
+          <span class="icon moon">🌙</span>
+          <span class="knob"></span>
+        </label>
+      </div>
+
+      <section class="content-preview">
+        <h2>Content Heading</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <button>Read More</button>
+      </section>
+
+      <footer>
+        <p>Theme preference is saved automatically</p>
+      </footer>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

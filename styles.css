@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+
+:root {
+  --bg-color: #f8f9fa;
+  --text-color: #333333;
+  --card-bg: #ffffff;
+  --accent-color: #007bff;
+  --border-color: #e9ecef;
+  --muted-text: #6c757d;
+  --button-bg: #007bff;
+  --button-text: #ffffff;
+  --button-hover: #0056b3;
+}
+
+body.dark {
+  --bg-color: #0f172a;
+  --text-color: #e5e7eb;
+  --card-bg: #1e293b;
+  --accent-color: #38bdf8;
+  --border-color: #334155;
+  --muted-text: #94a3b8;
+  --button-bg: #38bdf8;
+  --button-text: #020617;
+  --button-hover: #0ea5e9;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.main {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+.app-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.08),
+    0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s, color 0.3s;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+header p {
+  font-size: 15px;
+  color: var(--muted-text);
+}
+
+.toggle-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+#theme-toggle {
+  display: none;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 64px;
+  height: 32px;
+  background: var(--border-color);
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  transition: background-color 0.3s;
+}
+
+.icon {
+  font-size: 14px;
+  z-index: 1;
+  transition: opacity 0.3s;
+}
+
+.sun {
+  opacity: 1;
+}
+
+.moon {
+  opacity: 0;
+}
+
+.knob {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  left: 3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: left 0.3s, background-color 0.3s;
+}
+
+#theme-toggle:checked + .toggle-switch {
+  background: var(--accent-color);
+}
+
+#theme-toggle:checked + .toggle-switch .knob {
+  left: 35px;
+}
+
+#theme-toggle:checked + .toggle-switch .sun {
+  opacity: 0;
+}
+
+#theme-toggle:checked + .toggle-switch .moon {
+  opacity: 1;
+}
+
+.toggle-switch:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+
+.content-preview {
+  margin-bottom: 24px;
+}
+
+.content-preview h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.content-preview p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  color: var(--text-color);
+}
+
+
+button {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.15s;
+}
+
+button:hover {
+  background: var(--button-hover);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+
+footer {
+  text-align: center;
+}
+
+footer p {
+  font-size: 12px;
+  color: var(--muted-text);
+}
+
+
+@media (max-width: 480px) {
+  .main {
+    padding: 12px;
+  }
+
+  .app-card {
+    padding: 18px;
+  }
+}
